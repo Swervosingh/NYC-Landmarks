@@ -1,3 +1,4 @@
+
 from sqlalchemy_serializer import SerializerMixin
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import validates
@@ -6,7 +7,9 @@ Base = declarative_base()
 
 from config import db
 
-db=SQLAlchemy(metadate=Base.metadata)
+
+
+
 # Models go here!
 class Landmarks(db.Model, SerializerMixin):
     __tablename__ = 'landmarks'
@@ -37,3 +40,4 @@ class Landmarks(db.Model, SerializerMixin):
         return f'<Landmark {self.name}>'
     
     
+

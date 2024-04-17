@@ -1,8 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Navbar from './Navbar';
+import Home from './Home';
+import Locations from './Locations';
+import Pictures from './Pictures';
+import MapPage from './MapPage'; // Import the MapPage component
 
 function App() {
-  return <h1>Project Client</h1>;
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/locations" component={Locations} />
+          <Route path="/pictures" component={Pictures} />
+          <Route path="/map" component={MapPage} /> 
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
+
