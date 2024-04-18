@@ -6,7 +6,7 @@ Base = declarative_base()
 
 from config import db
 
-db=SQLAlchemy(metadate=Base.metadata)
+db=SQLAlchemy(metadata=Base.metadata)
 # Models go here!
 class Landmarks(db.Model, SerializerMixin):
     __tablename__ = 'landmarks'
